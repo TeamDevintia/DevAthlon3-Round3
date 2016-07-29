@@ -1,0 +1,4 @@
+name: Round3
+version: ${project.version}
+main: io.github.teamdevintia.round3.Round3
+author: TeamDevintia

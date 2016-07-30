@@ -9,7 +9,9 @@ import io.github.teamdevintia.round3.exceptions.KernelException;
 import io.github.teamdevintia.round3.game.pre.tasks.CountdownTask;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
-
+/**
+ * @author Shad0wCore and batthomas
+ */
 public final class Round3 extends JavaPlugin {
 
     private static Round3 PLUGIN_INSTANCE;

@@ -1,6 +1,10 @@
 package io.github.teamdevintia.round3.exceptions;
 
+/**
+ * @author Shad0wCore
+ */
 public class KernelException extends Exception {
+
     public KernelException() {
         super();
     }

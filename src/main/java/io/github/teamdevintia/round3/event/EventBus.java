@@ -13,6 +13,10 @@ import org.bukkit.plugin.RegisteredListener;
 
 import java.util.HashMap;
 
+/**
+ * @author Shad0wCore
+ */
+
 public final class EventBus {
 
     private Round3 library;

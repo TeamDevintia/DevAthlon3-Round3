@@ -1,5 +1,7 @@
 package io.github.teamdevintia.round3;
 
+import lombok.AccessLevel;
+import lombok.Getter;
 import org.bukkit.event.Listener;
 
 /**
@@ -7,14 +9,11 @@ import org.bukkit.event.Listener;
  */
 public abstract class ListenerHandler implements Listener {
 
-    private Round3 instance;
+    @Getter(AccessLevel.PUBLIC)
+    private final Round3 instance;
 
     public ListenerHandler(Round3 instance) {
         this.instance = instance;
-    }
-
-    public final Round3 getInstance() {
-        return this.instance;
     }
 
 }

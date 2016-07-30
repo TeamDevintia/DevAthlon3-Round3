@@ -1,7 +1,7 @@
-package io.github.teamdevintia.round3.tasks;
+package io.github.teamdevintia.round3.task.tasks;
 
 import io.github.teamdevintia.round3.Round3;
-import io.github.teamdevintia.round3.Task;
+import io.github.teamdevintia.round3.task.Task;
 
 /**
  * @author Shad0wCore

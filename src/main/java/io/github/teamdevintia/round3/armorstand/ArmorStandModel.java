@@ -7,7 +7,7 @@ import org.bukkit.plugin.Plugin;
 import java.util.List;
 
 /**
- * Holds up multiple ArmrStandModelEntities.<br>
+ * Holds up multiple ArmorStandModelEntities.<br>
  * Can spawn, despawn (and in the future: move) the whole model
  *
  * @author batthomas

@@ -2,8 +2,8 @@ package io.github.teamdevintia.round3.constants;
 
 import io.github.teamdevintia.round3.Round3;
 import io.github.teamdevintia.round3.game.pre.listeners.*;
-import io.github.teamdevintia.round3.handlers.ConstantHandler;
-import io.github.teamdevintia.round3.handlers.ListenerHandler;
+import io.github.teamdevintia.round3.ConstantHandler;
+import io.github.teamdevintia.round3.ListenerHandler;
 
 /**
  * @author Shad0wCore

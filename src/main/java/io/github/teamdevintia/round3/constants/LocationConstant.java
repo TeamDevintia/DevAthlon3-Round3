@@ -1,7 +1,7 @@
 package io.github.teamdevintia.round3.constants;
 
 import io.github.teamdevintia.round3.Round3;
-import io.github.teamdevintia.round3.handlers.ConstantHandler;
+import io.github.teamdevintia.round3.ConstantHandler;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 

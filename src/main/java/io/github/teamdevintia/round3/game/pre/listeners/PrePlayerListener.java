@@ -1,7 +1,7 @@
 package io.github.teamdevintia.round3.game.pre.listeners;
 
 import io.github.teamdevintia.round3.Round3;
-import io.github.teamdevintia.round3.handlers.ListenerHandler;
+import io.github.teamdevintia.round3.ListenerHandler;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -13,11 +13,12 @@ import org.bukkit.event.player.*;
  */
 public class PrePlayerListener extends ListenerHandler {
 
-    private String joinMessage, quitMessage;
+    private String prefix, joinMessage, quitMessage;
     private Location lobbyLocation;
 
     public PrePlayerListener(Round3 instance) {
         super(instance);
+        this.prefix = getInstance().getMessageConstant().get("generic.prefix");
         this.joinMessage = getInstance().getMessageConstant().get("game.pre.join");
         this.quitMessage = getInstance().getMessageConstant().get("game.pre.quit");
         this.lobbyLocation = getInstance().getLocationConstant().get("game.pre.lobby");
@@ -25,13 +26,13 @@ public class PrePlayerListener extends ListenerHandler {
 
     @EventHandler
     public void playerJoinListener(PlayerJoinEvent event) {
-        event.setJoinMessage(this.joinMessage);
+        event.setJoinMessage(this.prefix + "§6" + event.getPlayer().getName() + this.joinMessage);
         event.getPlayer().teleport(this.lobbyLocation);
     }
 
     @EventHandler
     public void playerQuitListener(PlayerQuitEvent event) {
-        event.setQuitMessage(this.quitMessage);
+        event.setQuitMessage(this.prefix + "§6" + event.getPlayer().getName() + this.quitMessage);
     }
 
     @EventHandler

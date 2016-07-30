@@ -2,7 +2,7 @@ package io.github.teamdevintia.round3.event;
 
 import io.github.teamdevintia.round3.Round3;
 import io.github.teamdevintia.round3.exceptions.KernelException;
-import io.github.teamdevintia.round3.handlers.CommandHandler;
+import io.github.teamdevintia.round3.CommandHandler;
 import org.bukkit.Bukkit;
 import org.bukkit.craftbukkit.v1_10_R1.CraftServer;
 import org.bukkit.event.EventPriority;

@@ -1,4 +1,4 @@
-package io.github.teamdevintia.round3.handlers;
+package io.github.teamdevintia.round3;
 
 import io.github.teamdevintia.round3.Round3;
 import org.bukkit.command.CommandSender;

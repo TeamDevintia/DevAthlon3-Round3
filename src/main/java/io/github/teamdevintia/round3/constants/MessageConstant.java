@@ -18,7 +18,7 @@ public class MessageConstant extends ConstantHandler<String> {
         this.put("generic.countdown", " §fbis §8'§7Islands§8' §fstartet§8.");
 
         this.put("game.pre.join", " §fhat den Server betreten§8.");
-        this.put("game.pre.quit", " §fhat den Server verlassen8.");
+        this.put("game.pre.quit", " §fhat den Server verlassen§8.");
 
     }
 

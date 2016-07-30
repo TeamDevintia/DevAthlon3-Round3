@@ -1,6 +1,5 @@
 package io.github.teamdevintia.round3;
 
-import io.github.teamdevintia.round3.Round3;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.defaults.BukkitCommand;
 import org.bukkit.entity.Player;
@@ -35,5 +34,6 @@ public abstract class CommandHandler extends BukkitCommand {
     public final boolean isNotCommandSender(CommandSender commandSender) {
         return commandSender instanceof Player;
     }
+
 
 }

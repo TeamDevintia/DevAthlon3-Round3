@@ -1,17 +1,23 @@
-package io.github.teamdevintia.round3.event;
+package io.github.teamdevintia.round3;
 
-import io.github.teamdevintia.round3.Round3;
 import io.github.teamdevintia.round3.exceptions.KernelException;
-import io.github.teamdevintia.round3.CommandHandler;
 import org.bukkit.Bukkit;
+import org.bukkit.command.Command;
 import org.bukkit.craftbukkit.v1_10_R1.CraftServer;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
+import org.bukkit.help.GenericCommandHelpTopic;
+import org.bukkit.help.HelpTopic;
+import org.bukkit.help.HelpTopicComparator;
+import org.bukkit.help.IndexHelpTopic;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredListener;
 
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * @author Shad0wCore
@@ -19,18 +25,21 @@ import java.util.HashMap;
 
 public final class EventBus {
 
-    private Round3 library;
+    private Round3 instance;
     private PluginManager pluginManager;
     private HashMap<String, HandlerList> handlerListHashMap;
+    private Map<String, CommandHandler> commandMap;
 
-    public EventBus(Round3 library) {
-        this.library = library;
-        this.pluginManager = this.library.getServer().getPluginManager();
+
+    public EventBus(Round3 instance) {
+        this.instance = instance;
+        this.pluginManager = this.instance.getServer().getPluginManager();
         this.handlerListHashMap = new HashMap<>();
+        this.commandMap = new HashMap<>();
     }
 
     public void addStaticEvent(Listener listener) {
-        this.pluginManager.registerEvents(listener, this.library);
+        this.pluginManager.registerEvents(listener, this.instance);
     }
 
     public void addStaticEvents(Listener... listeners) {
@@ -47,8 +56,8 @@ public final class EventBus {
 
         for (Listener listener : listeners) {
             handlerList.register(new RegisteredListener(listener, (listener1, event) -> {
-            }, EventPriority.NORMAL, this.library, false));
-            this.pluginManager.registerEvents(listener, this.library);
+            }, EventPriority.NORMAL, this.instance, false));
+            this.pluginManager.registerEvents(listener, this.instance);
         }
 
         this.handlerListHashMap.put(identifier, handlerList);
@@ -61,10 +70,27 @@ public final class EventBus {
         for (RegisteredListener registeredListener : this.handlerListHashMap.get(identifier).getRegisteredListeners()) {
             HandlerList.unregisterAll(registeredListener.getListener());
         }
+
+        this.handlerListHashMap.remove(identifier);
     }
 
     public void registerCommand(CommandHandler commandHandler) {
+        commandMap.put(commandHandler.getName(), commandHandler);
         ((CraftServer) Bukkit.getServer()).getCommandMap().register(commandHandler.getName(), commandHandler);
     }
+
+    private void registerHelp() {
+        Set<HelpTopic> help = new TreeSet<>(HelpTopicComparator.helpTopicComparatorInstance());
+        commandMap.keySet().stream().filter(commandLabel -> !commandLabel.contains(".")).forEach(commandLabel -> {
+            Command cmd = ((CraftServer) Bukkit.getServer()).getCommandMap().getCommand(commandLabel);
+            HelpTopic topic = new GenericCommandHelpTopic(cmd);
+            help.add(topic);
+        });
+        IndexHelpTopic topic = new IndexHelpTopic(instance.getName(), "All commands for "
+                + instance.getName(), instance.getName() + ".help", help, "Below is a list of all " + instance.getName() + " commands:");
+        Bukkit.getServer().getHelpMap().addTopic(topic);
+        help.forEach((t) -> Bukkit.getServer().getHelpMap().addTopic(t));
+    }
+
 
 }

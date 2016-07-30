@@ -1,25 +1,36 @@
-package io.github.teamdevintia.round3.game.pre.tasks;
+package io.github.teamdevintia.round3.tasks;
 
 import io.github.teamdevintia.round3.Round3;
+import io.github.teamdevintia.round3.Task;
 import io.github.teamdevintia.round3.enums.Source;
+import io.github.teamdevintia.round3.exceptions.KernelException;
+import io.github.teamdevintia.round3.game.manifest.CommandDebug;
 import io.github.teamdevintia.round3.helper.ActionBarHelper;
 import io.github.teamdevintia.round3.helper.FormatterHelper;
 import io.github.teamdevintia.round3.helper.SoundHelper;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
 import org.bukkit.Bukkit;
+import org.bukkit.Difficulty;
 import org.bukkit.Sound;
-import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.World;
+import org.bukkit.entity.Player;
+import org.bukkit.event.Listener;
 
 /**
  * @author Shad0wCore
  */
-public class CountdownTask extends BukkitRunnable {
+public class StartLobbyTask extends Task {
 
-    private Round3 instance;
+    @Getter(AccessLevel.PUBLIC)
+    @Setter(AccessLevel.PUBLIC)
     private int currentCountdownPosition, countdown, startNotifier, minPlayers;
+    @Getter(AccessLevel.PUBLIC)
     private String prefix, countdownMessage;
 
-    public CountdownTask(Round3 instance) {
-        this.instance = instance;
+    public StartLobbyTask(Round3 instance) {
+        super(instance);
         this.countdown = Integer.parseInt(this.instance.getPropertyConstant().get("generic.lobby.countdown"));
         this.currentCountdownPosition = this.countdown;
         this.startNotifier = Integer.parseInt(this.instance.getPropertyConstant().get("generic.lobby.startNotifier"));
@@ -27,6 +38,34 @@ public class CountdownTask extends BukkitRunnable {
 
         this.prefix = this.instance.getMessageConstant().get("generic.lobby.prefix");
         this.countdownMessage = this.instance.getMessageConstant().get("generic.lobby.countdown");
+
+        for (World world : Bukkit.getWorlds()) {
+            world.setFullTime(6000);
+            world.setThundering(false);
+            world.setStorm(false);
+            world.setTime(6000);
+            world.setAutoSave(false);
+            world.setDifficulty(Difficulty.PEACEFUL);
+        }
+
+        for (Player player : Bukkit.getOnlinePlayers()) {
+
+        }
+    }
+
+    @Override
+    public void startCommandInitialization() {
+        this.instance.getEventBus().registerCommand(new CommandDebug(this.instance, "debugging"));
+    }
+
+    @Override
+    public void startListenerInitialization() {
+        try {
+            this.instance.getEventBus().linkEventSection("generic.listeners.pre",
+                    (Listener[]) this.instance.getListenerConstant().get("generic.listeners.pre"));
+        } catch (KernelException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

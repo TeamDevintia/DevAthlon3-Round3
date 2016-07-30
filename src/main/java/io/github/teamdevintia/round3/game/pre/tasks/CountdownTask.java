@@ -20,13 +20,13 @@ public class CountdownTask extends BukkitRunnable {
 
     public CountdownTask(Round3 instance) {
         this.instance = instance;
-        this.countdown = Integer.parseInt(this.instance.getPropertyConstant().get("generic.countdown"));
+        this.countdown = Integer.parseInt(this.instance.getPropertyConstant().get("generic.lobby.countdown"));
         this.currentCountdownPosition = this.countdown;
-        this.startNotifier = Integer.parseInt(this.instance.getPropertyConstant().get("generic.startNotifier"));
-        this.minPlayers = Integer.parseInt(this.instance.getPropertyConstant().get("generic.minPlayers"));
+        this.startNotifier = Integer.parseInt(this.instance.getPropertyConstant().get("generic.lobby.startNotifier"));
+        this.minPlayers = Integer.parseInt(this.instance.getPropertyConstant().get("generic.lobby.minPlayers"));
 
-        this.prefix = this.instance.getMessageConstant().get("generic.prefix");
-        this.countdownMessage = this.instance.getMessageConstant().get("generic.countdown");
+        this.prefix = this.instance.getMessageConstant().get("generic.lobby.prefix");
+        this.countdownMessage = this.instance.getMessageConstant().get("generic.lobby.countdown");
     }
 
     @Override

@@ -14,10 +14,9 @@ public class PropertyConstant extends ConstantHandler<String> {
 
     @Override
     public void initializeContent() {
-        this.put("generic.countdown", "90");
-        this.put("generic.startNotifier", "6");
-
-        this.put("generic.minPlayers", "8");
+        this.put("generic.lobby.countdown", "90");
+        this.put("generic.lobby.startNotifier", "6");
+        this.put("generic.lobby.minPlayers", "8");
     }
 
 }

@@ -1,0 +1,81 @@
+scoreboard players add @e[tag=AM_hCUfVE] AM_hCUfVE 1
+scoreboard players set @e[tag=AM_hCUfVE,score_AM_hCUfVE_min=21] AM_hCUfVE 21
+execute @e[type=ArmorStand,name=AM_hCUfVE_M] ~ ~ ~ execute @e[type=ArmorStand,tag=AM_hCUfVE,score_AM_hCUfVE_min=1,c=24] ~ ~ ~ tp @e[c=1,r=1,type=!Player] @e[type=ArmorStand,name=AM_hCUfVE_M,c=1]
+tp @e[type=ArmorStand,tag=AM_hCUfVE,name=_MBGF,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] ~ ~-0.7963300000000001 ~0
+entitydata @e[tag=AM_hCUfVE,name=_MBGF,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] {Pose:{Head:[0f,0f,0f]}}
+tp @e[type=ArmorStand,tag=AM_hCUfVE,name=8xBjG,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] ~0.28125 ~0.17365000000000008 ~-1.0625
+entitydata @e[tag=AM_hCUfVE,name=8xBjG,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] {Rotation:[0f,0f]}
+tp @e[type=ArmorStand,tag=AM_hCUfVE,name=MndC1,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] ~ ~-0.06918000000000002 ~0.5
+entitydata @e[tag=AM_hCUfVE,name=MndC1,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] {Pose:{Head:[0f,0f,0f]}}
+tp @e[type=ArmorStand,tag=AM_hCUfVE,name=y5O0j,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] ~ ~-0.7025800000000001 ~-0.625
+entitydata @e[tag=AM_hCUfVE,name=y5O0j,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] {Pose:{Head:[0f,0f,0f]}}
+tp @e[type=ArmorStand,tag=AM_hCUfVE,name=wBLDz,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] ~0.28125 ~-0.10759999999999997 ~-1.0625
+entitydata @e[tag=AM_hCUfVE,name=wBLDz,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] {Rotation:[0f,0f]}
+tp @e[type=ArmorStand,tag=AM_hCUfVE,name=VHqix,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] ~0.28125 ~0.4549000000000001 ~-1.0625
+entitydata @e[tag=AM_hCUfVE,name=VHqix,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] {Rotation:[0f,0f]}
+tp @e[type=ArmorStand,tag=AM_hCUfVE,name=q8xwz,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] ~-0.28125 ~0.4549000000000001 ~-1.0625
+entitydata @e[tag=AM_hCUfVE,name=q8xwz,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] {Rotation:[0f,0f]}
+tp @e[type=ArmorStand,tag=AM_hCUfVE,name=1gdVg,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] ~ ~0.4549000000000001 ~-1.0625
+entitydata @e[tag=AM_hCUfVE,name=1gdVg,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] {Rotation:[0f,0f]}
+tp @e[type=ArmorStand,tag=AM_hCUfVE,name=igfl8,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] ~ ~-0.10759999999999997 ~-1.0625
+entitydata @e[tag=AM_hCUfVE,name=igfl8,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] {Rotation:[0f,0f]}
+tp @e[type=ArmorStand,tag=AM_hCUfVE,name=yXdYi,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] ~-0.28125 ~-0.10759999999999997 ~-1.0625
+entitydata @e[tag=AM_hCUfVE,name=yXdYi,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] {Rotation:[0f,0f]}
+tp @e[type=ArmorStand,tag=AM_hCUfVE,name=QC8p5,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] ~-0.28125 ~0.17365000000000008 ~-1.0625
+entitydata @e[tag=AM_hCUfVE,name=QC8p5,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] {Rotation:[0f,0f]}
+tp @e[type=ArmorStand,tag=AM_hCUfVE,name=lck91,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] ~-0.3125 ~-1.10883 ~0
+entitydata @e[tag=AM_hCUfVE,name=lck91,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] {Pose:{Head:[0f,-90f,0f]}}
+tp @e[type=ArmorStand,tag=AM_hCUfVE,name=QEzGb,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] ~0.3125 ~-1.10883 ~0
+entitydata @e[tag=AM_hCUfVE,name=QEzGb,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] {Pose:{Head:[0f,90f,0f]}}
+tp @e[type=ArmorStand,tag=AM_hCUfVE,name=vs0hL,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] ~-0.1875 ~-0.28793 ~0.5
+entitydata @e[tag=AM_hCUfVE,name=vs0hL,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] {Pose:{Head:[0f,0f,0f]}}
+tp @e[type=ArmorStand,tag=AM_hCUfVE,name=okZR8,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] ~0.25 ~-0.28793 ~0.5
+entitydata @e[tag=AM_hCUfVE,name=okZR8,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] {Pose:{Head:[0f,0f,0f]}}
+tp @e[type=ArmorStand,tag=AM_hCUfVE,name=z5RCZ,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] ~0.03125 ~-0.41293 ~0.78125
+entitydata @e[tag=AM_hCUfVE,name=z5RCZ,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] {Pose:{Head:[0f,0f,0f]}}
+tp @e[type=ArmorStand,tag=AM_hCUfVE,name=lWzsj,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] ~0.03125 ~-0.53793 ~1.09375
+entitydata @e[tag=AM_hCUfVE,name=lWzsj,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] {Pose:{Head:[0f,0f,0f]}}
+tp @e[type=ArmorStand,tag=AM_hCUfVE,name=NXnjJ,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] ~0.03125 ~-0.69418 ~1.40625
+entitydata @e[tag=AM_hCUfVE,name=NXnjJ,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] {Pose:{Head:[0f,0f,0f]}}
+tp @e[type=ArmorStand,tag=AM_hCUfVE,name=rSjTn,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] ~-0.5 ~-1.42133 ~0
+entitydata @e[tag=AM_hCUfVE,name=rSjTn,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] {Pose:{Head:[-40f,0f,0f]}}
+tp @e[type=ArmorStand,tag=AM_hCUfVE,name=Cphth,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] ~0.46875 ~-1.42133 ~0
+entitydata @e[tag=AM_hCUfVE,name=Cphth,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] {Pose:{Head:[-40f,0f,0f]}}
+tp @e[type=ArmorStand,tag=AM_hCUfVE,name=8Vi2p,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] ~ ~-0.8275800000000001 ~0.78125
+entitydata @e[tag=AM_hCUfVE,name=8Vi2p,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] {Pose:{Head:[-40f,0f,0f]}}
+tp @e[type=ArmorStand,tag=AM_hCUfVE,name=BONoL,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] ~0.65625 ~-0.5138499999999999 ~0
+entitydata @e[tag=AM_hCUfVE,name=BONoL,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] {Rotation:[0f,0f]}
+tp @e[type=ArmorStand,tag=AM_hCUfVE,name=RuB4C,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] ~-0.6875 ~-0.5138499999999999 ~0
+entitydata @e[tag=AM_hCUfVE,name=RuB4C,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] {Rotation:[0f,0f]}
+tp @e[type=ArmorStand,tag=AM_hCUfVE,name=fF0np,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] ~ ~-0.5416799999999999 ~0
+entitydata @e[tag=AM_hCUfVE,name=fF0np,score_AM_hCUfVE_min=1,score_AM_hCUfVE=21] {Rotation:[0f,0f]}
+execute @e[type=ArmorStand,name=AM_hCUfVE_M,score_AM_hCUfVE_min=2] ~ ~ ~ scoreboard players set @e[tag=AM_hCUfVE,c=24] AM_hCUfVE 1
+scoreboard players reset @e[name=AM_hCUfVE_M,score_AM_hCUfVE_min=2] AM_hCUfVE
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~ ~ ~ {CustomName:AM_hCUfVE_M,Invisible:1,Marker:1,NoGravity:1}
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~ ~-0.75383 ~ {DisabledSlots:1,Invisible:1,NoGravity:1,CustomName:_MBGF,Tags:["AM_hCUfVE"],ArmorItems:[{},{},{},{id:coal_block}]}
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~0.28125 ~0.13168 ~-1.0625 {Invisible:1,Marker:1,NoGravity:1,CustomName:8xBjG,Tags:["AM_hCUfVE"],Passengers:[{id:Villager,Age:-1000000,Invulnerable:1,NoAI:1,Silent:1,ActiveEffects:[{Id:14,Duration:9999999,ShowParticles:false}],CustomName:8xBjG,Tags:["AM_hCUfVE"],ArmorItems:[{},{},{},{id:coal_block}]}]}
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~ ~-0.04543 ~0.5 {Small:1,DisabledSlots:1,Invisible:1,NoGravity:1,CustomName:MndC1,Tags:["AM_hCUfVE"],ArmorItems:[{},{},{},{id:coal_block}]}
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~ ~-0.66008 ~-0.625 {DisabledSlots:1,Invisible:1,NoGravity:1,CustomName:y5O0j,Tags:["AM_hCUfVE"],ArmorItems:[{},{},{},{id:coal_block}]}
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~0.28125 ~-0.14957 ~-1.0625 {Invisible:1,Marker:1,NoGravity:1,CustomName:wBLDz,Tags:["AM_hCUfVE"],Passengers:[{id:Villager,Age:-1000000,Invulnerable:1,NoAI:1,Silent:1,ActiveEffects:[{Id:14,Duration:9999999,ShowParticles:false}],CustomName:wBLDz,Tags:["AM_hCUfVE"],ArmorItems:[{},{},{},{id:coal_block}]}]}
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~0.28125 ~0.41293 ~-1.0625 {Invisible:1,Marker:1,NoGravity:1,CustomName:VHqix,Tags:["AM_hCUfVE"],Passengers:[{id:Villager,Age:-1000000,Invulnerable:1,NoAI:1,Silent:1,ActiveEffects:[{Id:14,Duration:9999999,ShowParticles:false}],CustomName:VHqix,Tags:["AM_hCUfVE"],ArmorItems:[{},{},{},{id:coal_block}]}]}
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~-0.28125 ~0.41293 ~-1.0625 {Invisible:1,Marker:1,NoGravity:1,CustomName:q8xwz,Tags:["AM_hCUfVE"],Passengers:[{id:Villager,Age:-1000000,Invulnerable:1,NoAI:1,Silent:1,ActiveEffects:[{Id:14,Duration:9999999,ShowParticles:false}],CustomName:q8xwz,Tags:["AM_hCUfVE"],ArmorItems:[{},{},{},{id:coal_block}]}]}
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~ ~0.41293 ~-1.0625 {Invisible:1,Marker:1,NoGravity:1,CustomName:1gdVg,Tags:["AM_hCUfVE"],Passengers:[{id:Villager,Age:-1000000,Invulnerable:1,NoAI:1,Silent:1,ActiveEffects:[{Id:14,Duration:9999999,ShowParticles:false}],CustomName:1gdVg,Tags:["AM_hCUfVE"],ArmorItems:[{},{},{},{id:coal_block}]}]}
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~ ~-0.14957 ~-1.0625 {Invisible:1,Marker:1,NoGravity:1,CustomName:igfl8,Tags:["AM_hCUfVE"],Passengers:[{id:Villager,Age:-1000000,Invulnerable:1,NoAI:1,Silent:1,ActiveEffects:[{Id:14,Duration:9999999,ShowParticles:false}],CustomName:igfl8,Tags:["AM_hCUfVE"],ArmorItems:[{},{},{},{id:coal_block}]}]}
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~-0.28125 ~-0.14957 ~-1.0625 {Invisible:1,Marker:1,NoGravity:1,CustomName:yXdYi,Tags:["AM_hCUfVE"],Passengers:[{id:Villager,Age:-1000000,Invulnerable:1,NoAI:1,Silent:1,ActiveEffects:[{Id:14,Duration:9999999,ShowParticles:false}],CustomName:yXdYi,Tags:["AM_hCUfVE"],ArmorItems:[{},{},{},{id:coal_block}]}]}
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~-0.28125 ~0.13168 ~-1.0625 {Invisible:1,Marker:1,NoGravity:1,CustomName:QC8p5,Tags:["AM_hCUfVE"],Passengers:[{id:Villager,Age:-1000000,Invulnerable:1,NoAI:1,Silent:1,ActiveEffects:[{Id:14,Duration:9999999,ShowParticles:false}],CustomName:QC8p5,Tags:["AM_hCUfVE"],ArmorItems:[{},{},{},{id:coal_block}]}]}
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~-0.3125 ~-1.06633 ~ {Pose:{Head:[0f,-90f,0f]},DisabledSlots:1,Invisible:1,NoGravity:1,CustomName:lck91,Tags:["AM_hCUfVE"],ArmorItems:[{},{},{},{id:dark_oak_stairs}]}
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~0.3125 ~-1.06633 ~ {Pose:{Head:[0f,90f,0f]},DisabledSlots:1,Invisible:1,NoGravity:1,CustomName:QEzGb,Tags:["AM_hCUfVE"],ArmorItems:[{},{},{},{id:dark_oak_stairs}]}
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~-0.1875 ~-0.26418 ~0.5 {Small:1,DisabledSlots:1,Invisible:1,NoGravity:1,CustomName:vs0hL,Tags:["AM_hCUfVE"],ArmorItems:[{},{},{},{id:wooden_slab,Damage:5}]}
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~0.25 ~-0.26418 ~0.5 {Small:1,DisabledSlots:1,Invisible:1,NoGravity:1,CustomName:okZR8,Tags:["AM_hCUfVE"],ArmorItems:[{},{},{},{id:wooden_slab,Damage:5}]}
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~0.03125 ~-0.38918 ~0.78125 {Small:1,DisabledSlots:1,Invisible:1,NoGravity:1,CustomName:z5RCZ,Tags:["AM_hCUfVE"],ArmorItems:[{},{},{},{id:wooden_slab,Damage:5}]}
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~0.03125 ~-0.51418 ~1.09375 {Small:1,DisabledSlots:1,Invisible:1,NoGravity:1,CustomName:lWzsj,Tags:["AM_hCUfVE"],ArmorItems:[{},{},{},{id:wooden_slab,Damage:5}]}
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~0.03125 ~-0.67043 ~1.40625 {Small:1,DisabledSlots:1,Invisible:1,NoGravity:1,CustomName:NXnjJ,Tags:["AM_hCUfVE"],ArmorItems:[{},{},{},{id:wooden_slab,Damage:5}]}
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~-0.5 ~-1.32034 ~-0.160697 {Pose:{Head:[40f,0f,0f]},DisabledSlots:1,Invisible:1,NoGravity:1,CustomName:rSjTn,Tags:["AM_hCUfVE"],ArmorItems:[{},{},{},{id:planks,Damage:5}]}
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~0.46875 ~-1.32034 ~-0.160697 {Pose:{Head:[40f,0f,0f]},DisabledSlots:1,Invisible:1,NoGravity:1,CustomName:Cphth,Tags:["AM_hCUfVE"],ArmorItems:[{},{},{},{id:planks,Damage:5}]}
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~ ~-1.26144 ~0.5287120000000001 {Pose:{Head:[40f,0f,0f]},DisabledSlots:1,Invisible:1,NoGravity:1,CustomName:8Vi2p,Tags:["AM_hCUfVE"],ArmorItems:[{},{},{},{id:lever}]}
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~0.65625 ~-0.55582 ~ {Invisible:1,Marker:1,NoGravity:1,CustomName:BONoL,Tags:["AM_hCUfVE"],Passengers:[{id:Villager,Age:-1000000,Invulnerable:1,NoAI:1,Silent:1,ActiveEffects:[{Id:14,Duration:9999999,ShowParticles:false}],CustomName:BONoL,Tags:["AM_hCUfVE"],ArmorItems:[{},{},{},{id:stone}]}]}
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~-0.6875 ~-0.55582 ~ {Invisible:1,Marker:1,NoGravity:1,CustomName:RuB4C,Tags:["AM_hCUfVE"],Passengers:[{id:Villager,Age:-1000000,Invulnerable:1,NoAI:1,Silent:1,ActiveEffects:[{Id:14,Duration:9999999,ShowParticles:false}],CustomName:RuB4C,Tags:["AM_hCUfVE"],ArmorItems:[{},{},{},{id:stone}]}]}
+execute @e[type=Squid] ~ ~ ~ summon ArmorStand ~ ~-0.64957 ~ {Invisible:1,Marker:1,NoGravity:1,CustomName:fF0np,Tags:["AM_hCUfVE"],Passengers:[{id:Villager,Age:-1000000,Invulnerable:1,NoAI:1,Silent:1,ActiveEffects:[{Id:14,Duration:9999999,ShowParticles:false}],CustomName:fF0np,Tags:["AM_hCUfVE"],ArmorItems:[{},{},{},{id:cobblestone}]}]}
+tp @e[type=Squid] ~ ~-999 ~
+INIT:scoreboard objectives add AM_hCUfVE dummy
+INIT:give @p spawn_egg 1 0 {EntityTag:{id:Squid}}

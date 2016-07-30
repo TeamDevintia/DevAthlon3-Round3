@@ -3,7 +3,6 @@ package io.github.teamdevintia.round3.task.tasks;
 import io.github.teamdevintia.round3.Round3;
 import io.github.teamdevintia.round3.enums.Source;
 import io.github.teamdevintia.round3.exceptions.KernelException;
-import io.github.teamdevintia.round3.game.manifest.CommandDebug;
 import io.github.teamdevintia.round3.helper.ActionBarHelper;
 import io.github.teamdevintia.round3.helper.FormatterHelper;
 import io.github.teamdevintia.round3.helper.SoundHelper;
@@ -12,6 +11,7 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.*;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
@@ -30,15 +30,13 @@ public class LobbyTask extends Task {
 
     public LobbyTask(Round3 instance) {
         super(instance);
-        this.countdown = Integer.parseInt(pluginInstance.getPropertyConstant().get("generic.lobby.countdown"));
+        this.countdown = Integer.parseInt(instance.getPropertyConstant().get("generic.lobby.countdown"));
         this.currentCountdownPosition = this.countdown;
-        this.startNotifier = Integer.parseInt(pluginInstance.getPropertyConstant().get("generic.lobby.startNotifier"));
-        this.minPlayers = Integer.parseInt(pluginInstance.getPropertyConstant().get("generic.lobby.minPlayers"));
-
-        this.prefix = pluginInstance.getMessageConstant().get("generic.lobby.prefix");
-        this.countdownMessage = pluginInstance.getMessageConstant().get("generic.lobby.countdown");
-
-        this.lobbyLocation = pluginInstance.getLocationConstant().get("game.pre.lobby");
+        this.startNotifier = Integer.parseInt(instance.getPropertyConstant().get("generic.lobby.startNotifier"));
+        this.minPlayers = Integer.parseInt(instance.getPropertyConstant().get("generic.lobby.minPlayers"));
+        this.prefix = instance.getMessageConstant().get("generic.lobby.prefix");
+        this.countdownMessage = instance.getMessageConstant().get("generic.lobby.countdown");
+        this.lobbyLocation = instance.getLocationConstant().get("game.pre.lobby");
 
         for (World world : Bukkit.getWorlds()) {
             world.setFullTime(6000);
@@ -47,6 +45,7 @@ public class LobbyTask extends Task {
             world.setTime(6000);
             world.setAutoSave(false);
             world.setDifficulty(Difficulty.PEACEFUL);
+            world.getEntities().forEach(Entity::remove);
         }
 
         for (Player player : Bukkit.getOnlinePlayers()) {
@@ -55,15 +54,10 @@ public class LobbyTask extends Task {
     }
 
     @Override
-    public void startCommandInitialization() {
-        pluginInstance.getEventBus().registerCommand(new CommandDebug(pluginInstance, "debugging"));
-    }
-
-    @Override
     public void startListenerInitialization() {
         try {
-            pluginInstance.getEventBus().linkEventSection("generic.listeners.pre",
-                    (Listener[]) pluginInstance.getListenerConstant().get("generic.listeners.pre"));
+            instance.getEventBus().linkEventSection("generic.listeners.pre",
+                    (Listener[]) instance.getListenerConstant().get("generic.listeners.pre"));
         } catch (KernelException e) {
             e.printStackTrace();
         }

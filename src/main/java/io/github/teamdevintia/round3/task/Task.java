@@ -8,10 +8,10 @@ import org.bukkit.scheduler.BukkitRunnable;
  */
 public abstract class Task extends BukkitRunnable {
 
-    protected static Round3 pluginInstance;
+    protected static Round3 instance;
 
-    public Task(Round3 instance) {
-        pluginInstance = instance;
+    public Task(Round3 pluginInstance) {
+        instance = pluginInstance;
     }
 
     public static void executeTask(Task task, TaskGoal taskGoal) {
@@ -24,9 +24,9 @@ public abstract class Task extends BukkitRunnable {
         }
 
         if (taskGoal.isInterval()) {
-            task.runTaskTimer(pluginInstance, taskGoal.getDelayValue(), taskGoal.getIntervalValue());
+            task.runTaskTimer(instance, taskGoal.getDelayValue(), taskGoal.getIntervalValue());
         } else if (taskGoal.isDelayed()) {
-            task.runTaskLater(pluginInstance, taskGoal.getDelayValue());
+            task.runTaskLater(instance, taskGoal.getDelayValue());
         } else {
             task.run();
         }

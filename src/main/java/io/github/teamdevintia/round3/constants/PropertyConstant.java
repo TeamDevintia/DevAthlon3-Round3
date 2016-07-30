@@ -17,6 +17,10 @@ public class PropertyConstant extends ConstantHandler<String> {
         this.put("generic.lobby.countdown", "90");
         this.put("generic.lobby.startNotifier", "6");
         this.put("generic.lobby.minPlayers", "8");
+
+        this.put("generic.worlds.lobby", "lobby");
+        this.put("generic.worlds.game", "game");
+        this.put("generic.worlds.end", "lobby");
     }
 
 }

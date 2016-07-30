@@ -16,7 +16,7 @@ public class LocationConstant extends ConstantHandler<Location> {
 
     @Override
     public void initializeContent() {
-        this.put("game.pre.lobby", new Location(Bukkit.getWorld("world"), 336.5, 107.0, -908.5, 1.5F, 0.5F));
+        this.put("game.pre.lobby", new Location(Bukkit.getWorld("lobby"), 336.5, 107.0, -908.5, 1.5F, 0.5F));
     }
 
 }

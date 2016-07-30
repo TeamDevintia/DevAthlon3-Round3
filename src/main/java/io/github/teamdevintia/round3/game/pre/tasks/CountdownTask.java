@@ -3,6 +3,7 @@ package io.github.teamdevintia.round3.game.pre.tasks;
 import io.github.teamdevintia.round3.Round3;
 import io.github.teamdevintia.round3.enums.Source;
 import io.github.teamdevintia.round3.helper.ActionBarHelper;
+import io.github.teamdevintia.round3.helper.FormatterHelper;
 import io.github.teamdevintia.round3.helper.SoundHelper;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
@@ -41,7 +42,7 @@ public class CountdownTask extends BukkitRunnable {
             SoundHelper.playSound(Sound.ENTITY_EXPERIENCE_ORB_TOUCH, Source.MASTER, 1, 1);
         }
 
-        ActionBarHelper.send(this.prefix + "§6" + this.currentCountdownPosition + this.countdownMessage);
+        ActionBarHelper.send(this.prefix + "§6" + FormatterHelper.formattedTimePattern(this.currentCountdownPosition) + this.countdownMessage);
         this.currentCountdownPosition--;
     }
 

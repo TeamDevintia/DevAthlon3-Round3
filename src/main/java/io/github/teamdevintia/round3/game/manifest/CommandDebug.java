@@ -3,6 +3,7 @@ package io.github.teamdevintia.round3.game.manifest;
 import io.github.teamdevintia.round3.CommandHandler;
 import io.github.teamdevintia.round3.Round3;
 import io.github.teamdevintia.round3.exceptions.KernelException;
+import io.github.teamdevintia.round3.task.tasks.GameLobbyTask;
 import org.bukkit.command.CommandSender;
 import org.bukkit.event.Listener;
 
@@ -34,7 +35,7 @@ public class CommandDebug extends CommandHandler {
                 }
                 break;
             case "skipLobby":
-                
+                GameLobbyTask.getOriginInstance().endingTriggered();
                 break;
         }
         return true;

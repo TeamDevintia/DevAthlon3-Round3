@@ -7,6 +7,7 @@ import io.github.teamdevintia.round3.helper.ActionBarHelper;
 import io.github.teamdevintia.round3.helper.FormatterHelper;
 import io.github.teamdevintia.round3.helper.SoundHelper;
 import io.github.teamdevintia.round3.task.Task;
+import io.github.teamdevintia.round3.task.TaskGoal;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,7 +19,7 @@ import org.bukkit.event.Listener;
 /**
  * @author Shad0wCore
  */
-public class LobbyTask extends Task {
+public class GameLobbyTask extends Task {
 
     @Getter(AccessLevel.PUBLIC)
     @Setter(AccessLevel.PUBLIC)
@@ -28,15 +29,15 @@ public class LobbyTask extends Task {
 
     private Location lobbyLocation;
 
-    public LobbyTask(Round3 instance) {
+    public GameLobbyTask(Round3 instance) {
         super(instance);
-        this.countdown = Integer.parseInt(instance.getPropertyConstant().get("generic.lobby.countdown"));
+        this.countdown = Integer.parseInt(instance.getPropertyConstant().get("generics.lobby.countdown"));
         this.currentCountdownPosition = this.countdown;
-        this.startNotifier = Integer.parseInt(instance.getPropertyConstant().get("generic.lobby.startNotifier"));
-        this.minPlayers = Integer.parseInt(instance.getPropertyConstant().get("generic.lobby.minPlayers"));
-        this.prefix = instance.getMessageConstant().get("generic.lobby.prefix");
-        this.countdownMessage = instance.getMessageConstant().get("generic.lobby.countdown");
-        this.lobbyLocation = instance.getLocationConstant().get("game.pre.lobby");
+        this.startNotifier = Integer.parseInt(instance.getPropertyConstant().get("generics.lobby.startNotifier"));
+        this.minPlayers = Integer.parseInt(instance.getPropertyConstant().get("generics.lobby.minPlayers"));
+        this.prefix = instance.getMessageConstant().get("generics.prefix");
+        this.countdownMessage = instance.getMessageConstant().get("generics.lobby.countdown");
+        this.lobbyLocation = instance.getLocationConstant().get("generics.locations.lobby");
 
         for (World world : Bukkit.getWorlds()) {
             world.setFullTime(6000);
@@ -54,10 +55,21 @@ public class LobbyTask extends Task {
     }
 
     @Override
-    public void startListenerInitialization() {
+    public void initializationTriggered() {
         try {
-            instance.getEventBus().linkEventSection("generic.listeners.pre",
-                    (Listener[]) instance.getListenerConstant().get("generic.listeners.pre"));
+            instance.getEventBus().linkEventSection("generics.listeners.pre",
+                    (Listener[]) instance.getListenerConstant().get("generics.listeners.pre"));
+        } catch (KernelException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void endingTriggered() {
+        try {
+            this.cancel();
+            instance.getEventBus().releaseEventSection("generics.listeners.pre");
+            Task.executeTask(new GameStartTask(instance), TaskGoal.defaultTaskGoal());
         } catch (KernelException e) {
             e.printStackTrace();
         }

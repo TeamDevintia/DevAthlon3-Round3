@@ -14,13 +14,13 @@ public class PropertyConstant extends ConstantHandler<String> {
 
     @Override
     public void initializeContent() {
-        this.put("generic.lobby.countdown", "90");
-        this.put("generic.lobby.startNotifier", "6");
-        this.put("generic.lobby.minPlayers", "8");
+        this.put("generics.lobby.countdown", "90");
+        this.put("generics.lobby.startNotifier", "6");
+        this.put("generics.lobby.minPlayers", "8");
 
-        this.put("generic.worlds.lobby", "lobby");
-        this.put("generic.worlds.game", "game");
-        this.put("generic.worlds.end", "lobby");
+        this.put("generics.worlds.lobby", "lobby");
+        this.put("generics.worlds.game", "game");
+        this.put("generics.worlds.end", "lobby");
     }
 
 }

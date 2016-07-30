@@ -18,10 +18,10 @@ public class PrePlayerListener extends ListenerHandler {
 
     public PrePlayerListener(Round3 instance) {
         super(instance);
-        this.prefix = getInstance().getMessageConstant().get("generic.prefix");
-        this.joinMessage = getInstance().getMessageConstant().get("game.pre.join");
-        this.quitMessage = getInstance().getMessageConstant().get("game.pre.quit");
-        this.lobbyLocation = getInstance().getLocationConstant().get("game.pre.lobby");
+        this.prefix = getInstance().getMessageConstant().get("generics.prefix");
+        this.joinMessage = getInstance().getMessageConstant().get("generics.lobby.join");
+        this.quitMessage = getInstance().getMessageConstant().get("generics.lobby.quit");
+        this.lobbyLocation = getInstance().getLocationConstant().get("generics.locations.lobby");
     }
 
     @EventHandler

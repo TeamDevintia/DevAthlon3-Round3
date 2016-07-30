@@ -14,11 +14,11 @@ public class MessageConstant extends ConstantHandler<String> {
 
     @Override
     public void initializeContent() {
-        this.put("generic.prefix", "§8[ §3Islands §8> §f");
-        this.put("generic.countdown", " §fbis §8'§7Islands§8' §fstartet§8.");
+        this.put("generics.prefix", "§8[ §3Islands §8> §f");
+        this.put("generics.lobby.countdown", " §fbis §8'§7Islands§8' §fstartet§8.");
 
-        this.put("game.pre.join", " §fhat den Server betreten§8.");
-        this.put("game.pre.quit", " §fhat den Server verlassen§8.");
+        this.put("generics.lobby.join", " §fhat den Server betreten§8.");
+        this.put("generics.lobby.quit", " §fhat den Server verlassen§8.");
 
     }
 

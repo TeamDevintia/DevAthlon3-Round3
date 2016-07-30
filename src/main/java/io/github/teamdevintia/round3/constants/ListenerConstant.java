@@ -16,7 +16,7 @@ public class ListenerConstant extends ConstantHandler<ListenerHandler[]> {
 
     @Override
     public void initializeContent() {
-        this.put("generic.listeners.pre", new ListenerHandler[]{new PrePlayerListener(instance), new PreDamageListener(instance),
+        this.put("generics.listeners.pre", new ListenerHandler[]{new PrePlayerListener(instance), new PreDamageListener(instance),
                 new PreInteractListener(instance), new PreBlockListener(instance), new PreWorldListener(instance)});
     }
 

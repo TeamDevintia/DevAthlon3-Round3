@@ -6,9 +6,9 @@ import io.github.teamdevintia.round3.task.Task;
 /**
  * @author Shad0wCore
  */
-public class StartGameTask extends Task {
+public class GameEndTask extends Task {
 
-    public StartGameTask(Round3 instance) {
+    public GameEndTask(Round3 instance) {
         super(instance);
     }
 

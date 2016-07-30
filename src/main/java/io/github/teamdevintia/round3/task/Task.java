@@ -9,20 +9,14 @@ import org.bukkit.scheduler.BukkitRunnable;
 public abstract class Task extends BukkitRunnable {
 
     protected static Round3 instance;
+    protected static Task own;
 
     public Task(Round3 pluginInstance) {
         instance = pluginInstance;
+        own = this;
     }
 
     public static void executeTask(Task task, TaskGoal taskGoal) {
-        if (taskGoal.isListenerInitFirst()) {
-            task.startListenerInitialization();
-            task.startCommandInitialization();
-        } else {
-            task.startCommandInitialization();
-            task.startListenerInitialization();
-        }
-
         if (taskGoal.isInterval()) {
             task.runTaskTimer(instance, taskGoal.getDelayValue(), taskGoal.getIntervalValue());
         } else if (taskGoal.isDelayed()) {
@@ -30,14 +24,21 @@ public abstract class Task extends BukkitRunnable {
         } else {
             task.run();
         }
+
+        task.initializationTriggered();
     }
 
-    public void startListenerInitialization() {
+    public void initializationTriggered() {
 
     }
 
-    public void startCommandInitialization() {
+    public void endingTriggered() {
 
+    }
+
+    @Deprecated
+    public static Task getOriginInstance() {
+        return own;
     }
 
 }

@@ -1,4 +1,4 @@
-package io.github.teamdevintia.round3.game.pre.listeners;
+package io.github.teamdevintia.round3.listeners.pre;
 
 import io.github.teamdevintia.round3.Round3;
 import io.github.teamdevintia.round3.ListenerHandler;

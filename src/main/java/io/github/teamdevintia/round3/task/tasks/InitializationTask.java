@@ -1,8 +1,9 @@
 package io.github.teamdevintia.round3.task.tasks;
 
-import io.github.teamdevintia.round3.EventBus;
 import io.github.teamdevintia.round3.Round3;
-import io.github.teamdevintia.round3.game.manifest.CommandDebug;
+import io.github.teamdevintia.round3.commands.CommandDebug;
+import io.github.teamdevintia.round3.helper.TeamHelper;
+import io.github.teamdevintia.round3.panels.TeamPanel;
 import io.github.teamdevintia.round3.task.Task;
 import io.github.teamdevintia.round3.task.TaskGoal;
 import org.bukkit.WorldCreator;
@@ -20,7 +21,6 @@ public class InitializationTask extends Task {
 
     @Override
     public void run() {
-        instance.setEventBus(new EventBus(instance));
         instance.getPropertyConstant().initializeContent();
 
         WorldCreator worldCreator = new WorldCreator(instance.getPropertyConstant().get("generics.worlds.lobby"));
@@ -28,9 +28,13 @@ public class InitializationTask extends Task {
 
         instance.getMessageConstant().initializeContent();
         instance.getLocationConstant().initializeContent();
-        instance.getListenerConstant().initializeContent();
-
+        instance.getItemConstant().initializeContent();
+        instance.getNameTagConstant().initializeContent();
         instance.getEventBus().registerCommand(new CommandDebug(instance, "debugging"));
+        instance.getPanelManager().bindNewPanel("teamPanel", new TeamPanel(instance, "§7Wähle dein Team§8.", 9));
+
+        TeamHelper.registerTeam(instance.getNameTagConstant().get("generics.nametags.teamRed"));
+        TeamHelper.registerTeam(instance.getNameTagConstant().get("generics.nametags.teamBlue"));
         Task.executeTask(new GameLobbyTask(instance), lobbyTaskGoal);
     }
 

@@ -8,8 +8,8 @@ import io.github.teamdevintia.round3.task.Task;
  */
 public class GameStartTask extends Task {
 
-    public GameStartTask(Round3 instance) {
-        super(instance);
+    public GameStartTask(Round3 pluginInstance) {
+        super(pluginInstance);
     }
 
     @Override

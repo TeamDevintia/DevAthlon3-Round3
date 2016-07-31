@@ -1,11 +1,13 @@
 package io.github.teamdevintia.round3.task.tasks;
 
+import io.github.teamdevintia.round3.ListenerHandler;
 import io.github.teamdevintia.round3.Round3;
 import io.github.teamdevintia.round3.enums.Source;
 import io.github.teamdevintia.round3.exceptions.KernelException;
 import io.github.teamdevintia.round3.helper.ActionBarHelper;
 import io.github.teamdevintia.round3.helper.FormatterHelper;
 import io.github.teamdevintia.round3.helper.SoundHelper;
+import io.github.teamdevintia.round3.listeners.pre.*;
 import io.github.teamdevintia.round3.task.Task;
 import io.github.teamdevintia.round3.task.TaskGoal;
 import lombok.AccessLevel;
@@ -57,8 +59,8 @@ public class GameLobbyTask extends Task {
     @Override
     public void initializationTriggered() {
         try {
-            instance.getEventBus().linkEventSection("generics.listeners.pre",
-                    (Listener[]) instance.getListenerConstant().get("generics.listeners.pre"));
+            instance.getEventBus().linkEventSection("generics.listeners.pre", (Listener[]) new ListenerHandler[]{new PrePlayerListener(instance),
+                    new PreDamageListener(instance), new PreInteractListener(instance), new PreBlockListener(instance), new PreWorldListener(instance)});
         } catch (KernelException e) {
             e.printStackTrace();
         }
@@ -69,7 +71,7 @@ public class GameLobbyTask extends Task {
         try {
             this.cancel();
             instance.getEventBus().releaseEventSection("generics.listeners.pre");
-            Task.executeTask(new GameStartTask(instance), TaskGoal.defaultTaskGoal());
+            Task.executeTask(new GameBuildStartTask(instance), new TaskGoal(false, true, 0, 20));
         } catch (KernelException e) {
             e.printStackTrace();
         }
@@ -78,8 +80,8 @@ public class GameLobbyTask extends Task {
     @Override
     public void run() {
         if (this.currentCountdownPosition == 0 && Bukkit.getOnlinePlayers().size() >= this.minPlayers) {
-            SoundHelper.playSound(Sound.ENTITY_PLAYER_LEVELUP, Source.MASTER, 1, 1);
-            this.cancel();
+            this.endingTriggered();
+            return;
         } else if (this.currentCountdownPosition == 0) {
             this.currentCountdownPosition = this.countdown;
         }

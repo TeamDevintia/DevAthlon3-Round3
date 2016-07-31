@@ -16,6 +16,7 @@ public class MessageConstant extends ConstantHandler<String> {
     public void initializeContent() {
         this.put("generics.prefix", "§8[ §3Islands §8> §f");
         this.put("generics.lobby.countdown", " §fbis §8'§7Islands§8' §fstartet§8.");
+        this.put("generics.build.countdown", " §fbis das Gefecht eröffnet wird§8.");
 
         this.put("generics.lobby.join", " §fhat den Server betreten§8.");
         this.put("generics.lobby.quit", " §fhat den Server verlassen§8.");

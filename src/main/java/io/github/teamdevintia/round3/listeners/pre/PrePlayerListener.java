@@ -1,7 +1,8 @@
-package io.github.teamdevintia.round3.game.pre.listeners;
+package io.github.teamdevintia.round3.listeners.pre;
 
-import io.github.teamdevintia.round3.Round3;
 import io.github.teamdevintia.round3.ListenerHandler;
+import io.github.teamdevintia.round3.Round3;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -28,6 +29,11 @@ public class PrePlayerListener extends ListenerHandler {
     public void playerJoinListener(PlayerJoinEvent event) {
         event.setJoinMessage(this.prefix + "§6" + event.getPlayer().getName() + this.joinMessage);
         event.getPlayer().teleport(this.lobbyLocation);
+
+        for (Player player : Bukkit.getOnlinePlayers()) {
+           player.hidePlayer(event.getPlayer());
+           player.showPlayer(event.getPlayer());
+        }
     }
 
     @EventHandler
